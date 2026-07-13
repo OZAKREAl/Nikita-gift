@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101214">
+  <meta name="description" content="Интерактивный архив дружбы Богдана и Никиты — цифровой подарок на день рождения.">
+  <title>История двух идиотов</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+
+  <header class="topbar" id="topbar">
+    <a href="#hero" class="brand" aria-label="В начало">
+      <span class="brand-mark">//</span>
+      <span id="brandTitle">Архив</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="#dossier">Досье</a>
+      <a href="#timeline">Таймлайн</a>
+      <a href="#stories">Сюжеты</a>
+      <a href="#awards">Премия</a>
+      <a href="#final">Финал</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="mode-button" id="modeButton" type="button" aria-haspopup="dialog" aria-controls="modeDialog">
+        <span class="mode-dot" aria-hidden="true"></span>
+        <span id="modeButtonText">Безопасная версия</span>
+      </button>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Мобильная навигация">
+      <a href="#dossier">Досье</a>
+      <a href="#facts">Факты</a>
+      <a href="#timeline">Таймлайн</a>
+      <a href="#stories">Сюжеты</a>
+      <a href="#awards">Премия</a>
+      <a href="#final">Финал</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="hero" aria-labelledby="heroTitle">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="floating-words" aria-hidden="true">
+        <span style="--x:8%;--y:17%;--r:-8deg;--d:0s">Некит</span>
+        <span style="--x:79%;--y:14%;--r:7deg;--d:1s">пустослов</span>
+        <span style="--x:62%;--y:72%;--r:-4deg;--d:2s">как обычно</span>
+        <span style="--x:13%;--y:78%;--r:5deg;--d:3s">щас</span>
+        <span style="--x:86%;--y:48%;--r:-9deg;--d:4s">ты на квесте?</span>
+      </div>
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Секретный архив · дело № 42 656</p>
+          <h1 id="heroTitle">История двух идиотов</h1>
+          <p class="hero-subtitle" id="heroSubtitle"></p>
+          <div class="hero-meta">
+            <span id="heroPerson"></span>
+            <span class="divider" aria-hidden="true"></span>
+            <span id="heroPeriod"></span>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" id="startButton" href="#dossier"></a>
+            <button class="button button-ghost" id="rouletteButton" type="button">Рулетка локальных мемов</button>
+          </div>
+          <p class="source-note" id="sourceNote"></p>
+        </div>
+
+        <aside class="hero-terminal reveal" aria-label="Статус архива">
+          <div class="terminal-bar"><span></span><span></span><span></span><b>friendship_archive.log</b></div>
+          <div class="terminal-body" id="terminalBody">
+            <p><i>01</i> Загружаем решения, которые не следовало принимать...</p>
+            <p><i>02</i> Проверяем, на квесте ли Никита...</p>
+            <p><i>03</i> Нормализуем «ща» и «щас»...</p>
+            <p><i>04</i> Исключаем адреса, контакты и чужие секреты...</p>
+            <p class="terminal-ok"><i>05</i> Архив готов. Выводы не найдены.</p>
+          </div>
+        </aside>
+      </div>
+      <button class="scroll-cue" type="button" data-scroll="#dossier" aria-label="Прокрутить дальше">
+        <span>Листать дело</span><b aria-hidden="true">↓</b>
+      </button>
+    </section>
+
+    <section class="section dossier" id="dossier" aria-labelledby="dossierTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">01 · Краткое досье</p>
+          <h2 id="dossierTitle">Объект наблюдения: дружба, которая работает как проектный офис</h2>
+          <p>Личный чат, техподдержка, карьерная консультация, служба доставки мемов и место для идей любого уровня адекватности.</p>
+        </div>
+        <div class="dossier-grid" id="dossierGrid"></div>
+      </div>
+    </section>
+
+    <section class="section stats-section" id="stats" aria-labelledby="statsTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">02 · Никто не просил</p>
+          <h2 id="statsTitle">Главные цифры</h2>
+          <p>Без попытки определить, кто лучше дружит. Только масштаб ущерба и несколько подтверждённых закономерностей.</p>
+        </div>
+        <div class="stats-grid" id="statsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section facts-section" id="facts" aria-labelledby="factsTitle">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="eyebrow">03 · Факты</p>
+            <h2 id="factsTitle">Вещи, которые действительно происходили</h2>
+          </div>
+          <div class="section-controls">
+            <button class="chip is-active" type="button" data-fact-filter="all">Все</button>
+            <button class="chip" type="button" data-fact-filter="low">Безопасные</button>
+            <button class="chip" type="button" data-fact-filter="personal">Только свои</button>
+          </div>
+        </div>
+        <div class="cards-grid facts-grid" id="factsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section dictionary-section" id="dictionary" aria-labelledby="dictionaryTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">04 · Локализация</p>
+          <h2 id="dictionaryTitle">Словарь дружбы</h2>
+          <p>Перевод с внутреннего языка на человеческий. Точность ограничена контекстом и текущей степенью раздражения.</p>
+        </div>
+        <div class="dictionary-layout">
+          <div class="dictionary-list" id="dictionaryList" role="listbox" aria-label="Фразы словаря"></div>
+          <article class="dictionary-card reveal" id="dictionaryCard" aria-live="polite"></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section language-section" id="language" aria-labelledby="languageTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">05 · Языковая экспертиза</p>
+          <h2 id="languageTitle">Слова, реакции и орфографические подписи</h2>
+          <p>Не облако слов, а краткий разбор того, как одинаковые ситуации получают разные текстовые интерфейсы.</p>
+        </div>
+        <div class="language-layout">
+          <div class="word-table-wrap reveal">
+            <table class="word-table">
+              <thead><tr><th>Выражение</th><th>Богдан</th><th>Никита</th><th>Что это значит</th></tr></thead>
+              <tbody id="wordTableBody"></tbody>
+            </table>
+          </div>
+          <aside class="missing-data reveal" id="emojiPlaceholder"></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section timeline-section" id="timeline" aria-labelledby="timelineTitle">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="eyebrow">06 · 2018–2026</p>
+            <h2 id="timelineTitle">Таймлайн дружбы</h2>
+          </div>
+          <div class="timeline-filters" id="timelineFilters" aria-label="Фильтр по годам"></div>
+        </div>
+        <div class="timeline-track" id="timelineTrack"></div>
+      </div>
+    </section>
+
+    <section class="section stories-section" id="stories" aria-labelledby="storiesTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">07 · Сюжетные линии</p>
+          <h2 id="storiesTitle">Великие истории, которые развивались дольше одного сообщения</h2>
+          <p>Нажмите на главу: внутри — завязка, план, момент поломки, финал и главная фраза.</p>
+        </div>
+        <div class="story-tabs" id="storyTabs" role="tablist" aria-label="Сюжетные линии"></div>
+        <article class="story-stage reveal" id="storyStage" role="tabpanel"></article>
+      </div>
+    </section>
+
+    <section class="section plans-section" id="plans" aria-labelledby="plansTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">08 · Архив великих планов</p>
+          <h2 id="plansTitle">От «обсудили» до «как обычно»</h2>
+          <p>Вероятность реализации — не прогноз, а визуальная шкала по подтверждённому итоговому статусу.</p>
+        </div>
+        <div class="plans-grid" id="plansGrid"></div>
+      </div>
+    </section>
+
+    <section class="section debates-section" id="debates" aria-labelledby="debatesTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">09 · Парламентские слушания</p>
+          <h2 id="debatesTitle">Великие споры</h2>
+          <p>Реально болезненные детали исключены. Даже личная версия показывает только отобранный безопасный пересказ.</p>
+        </div>
+        <div class="accordion" id="debatesAccordion"></div>
+      </div>
+    </section>
+
+    <section class="section quotes-section" id="quotes" aria-labelledby="quotesTitle">
+      <div class="container quote-container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">10 · Цитаты без контекста</p>
+          <h2 id="quotesTitle">Материалы дела</h2>
+        </div>
+        <article class="quote-machine reveal" aria-live="polite">
+          <span class="quote-category" id="quoteCategory"></span>
+          <blockquote id="randomQuote"></blockquote>
+          <div class="quote-meta" id="quoteMeta"></div>
+          <p class="quote-context" id="quoteContext"></p>
+          <button class="button button-primary" id="newQuoteButton" type="button">Следующая улика</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section mini-stories-section" id="miniStories" aria-labelledby="miniStoriesTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">11 · 20–40 секунд чтения</p>
+          <h2 id="miniStoriesTitle">Маленькие истории</h2>
+        </div>
+        <div class="mini-story-rail" id="miniStoriesRail"></div>
+      </div>
+    </section>
+
+    <section class="section awards-section" id="awards" aria-labelledby="awardsTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">12 · Премия имени двух идиотов</p>
+          <h2 id="awardsTitle">Номинации, которых не было в положении о конкурсе</h2>
+          <p>Откройте конверт. Победитель заранее известен, но церемония всё равно обязательна.</p>
+        </div>
+        <div class="awards-grid" id="awardsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section game-section" id="game" aria-labelledby="gameTitle">
+      <div class="container game-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow">13 · Экспертиза авторства</p>
+          <h2 id="gameTitle">Кто это написал?</h2>
+          <p>Только безопасные цитаты в публичном режиме. Личная версия добавляет материалы, требующие подтверждения.</p>
+        </div>
+        <article class="quiz-card reveal" id="quizCard">
+          <div class="quiz-score"><span id="quizProgress">1/1</span><span id="quizScore">0 верно</span></div>
+          <blockquote id="quizQuote"></blockquote>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+          <button class="button button-ghost" id="nextQuizButton" type="button" hidden>Следующая цитата</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section generator-section" id="generator" aria-labelledby="generatorTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">14 · Синтетика с честной маркировкой</p>
+          <h2 id="generatorTitle">Генератор типичного ответа</h2>
+          <p>Фразы собраны из повторяющихся паттернов. Они не выдаются за реальные цитаты.</p>
+        </div>
+        <div class="generator-panel reveal">
+          <label for="situationSelect">Ситуация</label>
+          <select id="situationSelect"></select>
+          <button class="button button-primary" id="generateResponseButton" type="button">Сгенерировать сомнительный совет</button>
+          <div class="response-grid" id="responseGrid"></div>
+          <small id="syntheticNote"></small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery" aria-labelledby="galleryTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">15 · Медиаархив</p>
+          <h2 id="galleryTitle">Галерея и голосовые</h2>
+          <p>Сейчас здесь безопасные плейсхолдеры. Пути к файлам уже прописаны — достаточно положить медиа в папку assets.</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="audio-list" id="audioList"></div>
+      </div>
+    </section>
+
+    <section class="section warm-section" id="warm" aria-labelledby="warmTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">16 · Без пафоса</p>
+          <h2 id="warmTitle">Что остаётся, если убрать весь шум</h2>
+          <p>Не соревнование и не психологический анализ. Только конкретные ситуации, где участие видно по действиям.</p>
+        </div>
+        <div class="warm-grid" id="warmGrid"></div>
+      </div>
+    </section>
+
+    <section class="section final-section" id="final" aria-labelledby="finalTitle">
+      <div class="container final-grid">
+        <div class="final-visual reveal" id="finalVisual" aria-label="Место для совместной фотографии">
+          <div class="photo-placeholder">
+            <span>совместная фотография</span>
+            <small>assets/images/hero-photo.jpg</small>
+          </div>
+        </div>
+        <div class="final-copy reveal">
+          <p class="eyebrow">17 · Финальный экран</p>
+          <h2 id="finalTitle">Никит, с днём рождения.</h2>
+          <div class="final-message" id="finalMessage"></div>
+          <div class="final-actions">
+            <button class="button button-primary" id="lastJokeButton" type="button">Последняя шутка</button>
+            <button class="button button-ghost" id="uselessButton" type="button">Щас</button>
+          </div>
+          <p class="easter-message" id="easterMessage" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong id="footerTitle">История двух идиотов</strong>
+        <p>Статический сайт: без аналитики, cookies, внешних шрифтов и загрузки переписки.</p>
+      </div>
+      <div>
+        <button class="text-button" id="openReviewButton" type="button">Редакторский чек-лист</button>
+        <button class="text-button" id="copySourceButton" type="button">Скопировать название источника</button>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="dialog" id="modeDialog">
+    <form method="dialog" class="dialog-card">
+      <button class="dialog-close" value="cancel" aria-label="Закрыть">×</button>
+      <p class="eyebrow">Режим приватности</p>
+      <h2>Какую версию открыть?</h2>
+      <p>Публичная версия скрывает все элементы с <code>approvedForPublication: false</code>. Личная версия показывает отобранные 18+ и контекстные материалы, но всё равно не содержит полностью исключённых секретов.</p>
+      <div class="mode-options">
+        <button class="mode-option" type="button" data-set-mode="public">
+          <b>Безопасная версия</b><span>Для ссылки друзьям и публикации.</span>
+        </button>
+        <button class="mode-option is-personal" type="button" data-set-mode="personal">
+          <b>Личная версия</b><span>Мат, контекстные шутки и материалы на ручную проверку.</span>
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="dialog" id="reviewDialog">
+    <form method="dialog" class="dialog-card dialog-wide">
+      <button class="dialog-close" value="cancel" aria-label="Закрыть">×</button>
+      <p class="eyebrow">Перед публикацией</p>
+      <h2>Редакторский чек-лист</h2>
+      <div class="review-columns">
+        <section><h3>Требуют подтверждения</h3><ul id="approvalList"></ul></section>
+        <section><h3>Полностью исключены</h3><ul id="excludedList"></ul></section>
+        <section><h3>Куда положить медиа</h3><ul id="mediaSlotList"></ul></section>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="dialog" id="galleryDialog">
+    <form method="dialog" class="dialog-card gallery-dialog-card">
+      <button class="dialog-close" value="cancel" aria-label="Закрыть">×</button>
+      <div id="galleryDialogContent"></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
